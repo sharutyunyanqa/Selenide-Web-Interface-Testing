@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -16,7 +17,7 @@ public class CardOrderTest {
         form.$("[data-test-id=agreement]") .click();
         form.$(By.className("button" )) .click();
         $("[data-test-id=order-success]").shouldHave(exactText("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-        //Configuration.timeout = 6000;
+        Configuration.timeout = 6000;
     }
 }
 
